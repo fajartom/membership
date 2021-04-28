@@ -1,0 +1,72 @@
+@extends('layouts.app')
+
+@section('content')
+<div class="header bg-gradient-primary pb-8 pt-5 pt-md-8">
+      <div class="container-fluid">
+        <div class="header-body mb-4">
+          <!-- Card stats -->
+          <div class="row">
+             
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container-fluid mt--7">
+      <!-- Table -->
+      <div class="row">
+        <div class="col">
+            
+             <div class="card shadow">
+    <div class="card-header border-0">
+        <div class="row align-items-center">
+        <div class="col"><h3 class="mb-0 text-uppercase">{{ $cat->name }}</h3></div>
+        <div class="col text-right">
+            
+          <a class="btn btn-sm btn-primary" href="{{ route('payment.index', $locale)}}">Back</a>
+        
+        </div>
+          
+    </div>
+    </div>
+    
+<div class="card-body pt-0">
+
+
+<div class="row">
+  @if ($cat->logo)
+  <div class="col-md-4 text-center">
+    <div class="card">
+      <img class="card-img-top" src="{{ asset("storage/setting/{$cat->logo}") }}" alt="{{ $cat->logo }}">
+      <div class="card-body p-1">
+        <p class="text-center mb-0">
+          <a href="{{ asset("storage/setting/{$cat->logo}") }}" target="_blank">
+            <small>
+              {{ $cat->logo }}
+            </small>
+          </a>
+        </p>
+      </div>
+    </div>
+    <label class="form-control-label d-block d-md-none">&nbsp;</label>
+  </div>
+  <div class="col-xs-12 col-sm-12 col-md-8">
+  @else
+  <div class="col">
+  @endif
+      <div class="form-group">
+          <strong><h6 class="heading-small text-muted">Detail Information</h6></strong>
+          <hr class="my-2"></hr>
+      </div>
+      <div class="form-group">
+          <strong>Name:</strong>
+          {{ $cat->name }}
+      </div>
+      <div class="form-group">
+          <strong>Description:</strong>
+          {{ $cat->description }}
+      </div>
+  </div>
+</div>
+</div>
+</div>
+@endsection

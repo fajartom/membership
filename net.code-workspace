@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "/usr/local/var/www/debug"
+		}
+	],
+	"settings": {
+		"git.ignoreLimitWarning": true
+	}
+}
